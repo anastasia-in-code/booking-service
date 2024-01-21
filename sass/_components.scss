@@ -267,14 +267,14 @@
 
   & span {
     margin-left: 3px;
-    transition: margin-left .3s;
+    transition: margin-left 0.3s;
   }
 
   &:hover {
     color: var(--color-grey-dark-1);
 
     span {
-        margin-left: 8px;
+      margin-left: 8px;
     }
   }
 
@@ -406,12 +406,12 @@
     font-size: 1.1rem;
     font-weight: 600;
     text-transform: uppercase;
-    margin-bottom: .4rem;
+    margin-bottom: 0.4rem;
   }
 
   &__user-date {
     font-size: 1rem;
-    color: var(--color-grey-dark-3)
+    color: var(--color-grey-dark-3);
   }
 
   &__rating {
@@ -430,5 +430,76 @@
     color: var(--color-grey-light-2);
     font-family: sans-serif;
     z-index: 1;
+  }
+}
+
+///////////////////
+/// CALL TO ACTION
+///
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+
+  &__book-now {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary)
+  );
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  & > * {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+
+  &__visible {
+    padding: 2rem 7.5rem;
+  }
+
+  &__invisible {
+    position: absolute;
+    left: 0;
+    top: -100%;
+    padding: 2rem 0;
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+        to left,
+        var(--color-primary-light),
+        var(--color-primary)
+      );
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__invisible {
+    top: 0;
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
   }
 }
